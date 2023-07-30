@@ -9,10 +9,11 @@ database-proxy
 <br> &emsp; models
 <br> &emsp;&emsp;schema.json &emsp;# Defines the schema of the database
 <br> &emsp;routes
-<br> &emsp;&emsp;index.js &emsp;# Defines the router supporting CRUD operations
+<br> &emsp;&emsp;index.js &emsp;# Defines the router supporting CRUD operations including the error handling
 <br> &emsp;tests
 <br> &emsp;&emsp; dbController.test.js &emsp;# Contains unit tests for the dbController
 <br> &emsp;package.json &emsp;# Project dependencies and scripts
+<br> &emsp;config.js
 <br> &emsp;README.md &emsp;# Project documentation
 ## Getting Started
 npm start
@@ -26,8 +27,9 @@ The API provides the following endpoints for CRUD operations:
 <br>The :collection parameter in the endpoints represents the name of the table in the database.
 ## Database Schema
 The database schema is defined in the schema.json file inside the models directory. <br>The application will ingest this schema file on every server startup and create the necessary tables in the database if they do not exist.
+<br> To enhance security and improve maintainability, I choose to read the database information like host and password from a configuration file instead of hardcoding it directly in the code.
 ## Testing
-The application includes unit tests for the dbController, using the Mocha testing framework. <br>To run the tests, use the following command:npm test
+The application includes unit tests for the dbController, using the Mocha testing framework. <br>To run the tests, use the following command:&ensp;npm test
 <br>The tests are defined in the dbController.test.js file inside the tests directory.
 ## Logging
 The application uses Morgan for logging HTTP requests. <br>Request logs will be printed to the console during server execution.
