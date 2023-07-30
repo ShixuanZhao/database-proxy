@@ -31,3 +31,12 @@ The application includes unit tests for the dbController, using the Mocha testin
 <br>The tests are defined in the dbController.test.js file inside the tests directory.
 ## Logging
 The application uses Morgan for logging HTTP requests. <br>Request logs will be printed to the console during server execution.
+## Future Development
+We need to make additional changes if the application were intended to run in a concurrent environment to ensure the application's performance, scalability, and safety. I just list several changes for example:
+<br> &emsp;1. Connection Pooling: Implement connection pooling for the database to efficiently manage and reuse database connections. This helps reduce the overhead of creating and closing connections for each request, especially in a concurrent environment with multiple client requests.
+<br> &emsp;2. Handling Concurrent Requests: Ensure that the application can handle multiple concurrent requests without any conflicts or data corruption. We can use synchronization mechanisms like mutexes or semaphores to prevent race conditions when accessing shared resources.
+<br> &emsp;3. Asynchronous Operations: Utilize asynchronous programming patterns, such as async/await or Promises, to handle non-blocking I/O operations and avoid blocking the event loop.
+<br> &emsp;4. Load Balancing: If running the application on multiple instances or nodes, consider implementing load balancing to distribute incoming requests evenly across the nodes. This helps in better utilization of resources and improved performance.
+<br> &emsp;5. Caching: Implement caching mechanisms to cache frequently accessed data and reduce the load on the database. This can help improve response times and overall performance in a concurrent environment.
+<br> &emsp;6. Monitoring: Implement monitoring and logging to track the application's performance, identify bottlenecks, and detect potential issues in a concurrent environment.
+
