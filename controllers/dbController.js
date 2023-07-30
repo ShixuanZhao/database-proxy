@@ -1,16 +1,17 @@
 // controllers/dbController.js
 const fs = require('fs');
 const mysql = require('mysql');
+const config = require('../config'); // Import the configuration file
 
 let connection;
 
 module.exports = {
   initializeSchema: () => {
     connection = mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '123QWEasd425112!',
-      database: 'proxy_db',
+      host: config.host,
+      user: config.user,
+      password: config.password,
+      database: config.database,
     });
 
     connection.connect((err) => {
