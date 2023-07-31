@@ -1,6 +1,6 @@
 # Database Proxy - Node.js
 
-This is a simple Node.js application that acts as a generic database proxy, providing a REST API for CRUD operations on a SQL database. The application uses Express and MySQL to handle the HTTP requests and interact with the database. For
+This is a simple Node.js application that acts as a generic database proxy, providing a REST API for CRUD operations on a SQL database. The application uses Express and MySQL to handle the HTTP requests and interact with the database. 
 ## Project Structure
 database-proxy
 <br> &emsp; app.js &emsp;# The entry point of the application
